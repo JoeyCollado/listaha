@@ -11,4 +11,5 @@ const page = () => {
 export default page
 
 //prisma install
-//npm i prisma
+//npm i prisma 
+//npx prisma init --datasource-provider mongodb 
