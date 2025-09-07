@@ -13,3 +13,11 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
+
+//model
+model Todo{
+  id String @id @default(uuid()) @map("_id")
+  title String?
+  isCompleted Boolean @default(false)
+  createdAt DateTime @default(now())
+}
