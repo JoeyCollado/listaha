@@ -2,8 +2,8 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>
-      Listaha
+    <div className='w-screen py-20 flex justify-center flex-col items-center'>
+      <span className='text-4xl font-extrabold uppercase'>Listaha App</span>
     </div>
   )
 }
