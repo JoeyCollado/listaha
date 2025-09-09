@@ -9,7 +9,7 @@ const page = () => {
       </h1>
 
       <div className='flex justify-center flex-col items-center'>
-        {/* input todo */}
+        {/* add todo items*/}
         {/* map todos */}
       </div>
     </div>
