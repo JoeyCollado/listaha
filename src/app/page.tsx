@@ -1,3 +1,4 @@
+import Todos from '@/components/Todos'
 import React from 'react'
 
 const page = () => {
@@ -9,7 +10,8 @@ const page = () => {
       </h1>
 
       <div className='flex justify-center flex-col items-center'>
-        {/* add todo items*/}
+        {/* add todo items*/} 
+        <Todos/>
         {/* map todos */}
       </div>
     </div>

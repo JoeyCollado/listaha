@@ -1,20 +1,21 @@
-import React from "react";
-import Input from "./Input";
 import Form from "./Form";
+import Input from "./Input";
 import Button from "./Button";
 
-const Todos = () => {
+
+
+
+const AddTodo = () => {
   return (
     <div>
       <Form>
-        <div className="flex gap-2">
-          <Input name="input" type="text" placeholder="Add Todo Here">
-            <Button type="submit" text="Add" bgColor="bg-blue-600"/>
-          </Input>
+        <div className="flex gap-4 items-center">
+          <Input name="input" type="text" placeholder="Add Todo Here..." />
+          <Button type="submit" text="Add" bgColor="bg-blue-600" />
         </div>
       </Form>
     </div>
   );
 };
 
-export default Todos;
+export default AddTodo;
