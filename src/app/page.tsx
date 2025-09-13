@@ -1,7 +1,25 @@
 import Todos from '@/components/Todos'
 import React from 'react'
+import {prisma} from "@/utils/prisma" //grab data
+
+async function getData(){ //function to fetch the grabbed data
+  const data = await prisma.todo.findMany({
+    select:  {
+      title: true,
+      id: true,
+      isCompleted: true,
+    },
+    orderBy: {
+      createdAt: 'asc',
+    }
+  })
+
+  return data;
+}
 
 const page = () => {
+
+  
   return (
     <div className='w-screen py-20 flex justify-center flex-col items-center'>
       <span className='text-4xl font-extrabold uppercase'>Listaha App</span>
@@ -13,6 +31,9 @@ const page = () => {
         {/* add todo items*/} 
         <Todos/>
         {/* map todos */}
+        <div className='flex flex-col gap-5 items-center justify-center mt-10 w-screen'>
+
+        </div>
       </div>
     </div>
   )
@@ -35,3 +56,7 @@ https://pris.ly/d/getting-started
 */
 
 //https://www.prisma.io/docs/getting-started/setup-prisma/add-to-existing-project/mongodb/connect-your-database-node-mongodb
+
+//to inject data to mongo db
+//we have to create a form
+//create a server action file and create a function
