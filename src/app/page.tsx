@@ -17,9 +17,10 @@ async function getData(){ //function to fetch the grabbed data
   return data;
 }
 
-const page = () => {
+export default async function Home(){
 
-  
+  const data = await getData(); //grab data using async function  
+
   return (
     <div className='w-screen py-20 flex justify-center flex-col items-center'>
       <span className='text-4xl font-extrabold uppercase'>Listaha App</span>
@@ -32,14 +33,15 @@ const page = () => {
         <Todos/>
         {/* map todos */}
         <div className='flex flex-col gap-5 items-center justify-center mt-10 w-screen'>
-
+           {data.map((todo,id) => (
+            <div key={id}>{todo.title}</div>
+           ))}
         </div>
       </div>
     </div>
   )
 }
 
-export default page
 
 //prisma install
 //npm i prisma 
