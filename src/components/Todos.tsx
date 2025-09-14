@@ -1,7 +1,7 @@
 import Form from "./Form";
 import Input from "./Input";
 import Button from "./Button";
-import { createTodo } from "@/actions";
+import * as actions from "@/actions";
 
 //how this works
 //when we click the button the form will start working
@@ -11,7 +11,7 @@ import { createTodo } from "@/actions";
 const AddTodo = () => {
   return (
     <div>
-      <Form action={createTodo}>
+      <Form action={actions.createTodo}>
         <div className="flex gap-4 items-center">
           <Input name="input" type="text" placeholder="Add Todo Here..." />
           <Button type="submit" text="Add" bgColor="bg-blue-600" />
