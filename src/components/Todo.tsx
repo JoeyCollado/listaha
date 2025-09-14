@@ -2,8 +2,12 @@ import React from 'react'
 
 const Todo = () => {
   return (
-    <div>
+    <div> 
+      {/* Change todo */}
       
+      {/* edit todo */}
+
+      {/* delete todo */}
     </div>
   )
 }
