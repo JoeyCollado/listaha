@@ -21,3 +21,10 @@ export interface buttonProps{
     actionButton?: boolean; //if true add styling
     bgColor?: string;
 }
+
+export interface todoProps{
+    id: string;
+    title: string | null;
+    isCompleted: boolean;
+    createdAt?: Date;
+}
