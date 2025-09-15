@@ -6,7 +6,7 @@ import * as actions from "@/actions";
 import { todoProps } from '@/types';
 import { FaCheck } from 'react-icons/fa';
 
-const ChangeTodo = ({todo}: todoProps) => {
+const ChangeTodo = ({todo}: {todo: todoProps}) => {
   return (
     <Form action={actions.changeStatus}>
         <Input name='inputId' value={todo.id} type='hidden'></Input>
