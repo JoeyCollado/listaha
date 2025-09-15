@@ -1,6 +1,7 @@
 import Todos from '@/components/Todos'
 import React from 'react'
 import {prisma} from "@/utils/prisma" //grab data
+import Todo from '@/components/Todo';
 
 async function getData(){ //function to fetch the grabbed data
   const data = await prisma.todo.findMany({
@@ -34,7 +35,7 @@ export default async function Home(){
         {/* map todos */}
         <div className='flex flex-col gap-5 items-center justify-center mt-10 w-screen'>
            {data.map((todo,id) => (
-            <div key={id}>{todo.title}</div>
+            <div key={id}><Todo todo={todo}/></div>
            ))}
         </div>
       </div>
