@@ -11,7 +11,7 @@ async function getData(){ //function to fetch the grabbed data
       isCompleted: true,
     },
     orderBy: {
-      createdAt: 'asc',
+      createdAt: 'desc',
     }
   })
 
@@ -23,7 +23,7 @@ export default async function Home(){
   const data = await getData(); //grab data using async function  
 
   return (
-    <div className='w-screen py-20 flex justify-center flex-col items-center'>
+    <div className='w-screen py-20 flex justify-center flex-col items-center text-white h-screen bg-black'>
       <span className='text-4xl font-extrabold uppercase'>Listaha App</span>
       <h1 className='text-5xl font-extrabold uppercase mb-5 text-center'>
         <span className='lowercase'>w</span>Server Actions
