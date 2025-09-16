@@ -11,7 +11,7 @@ const Todo = ({todo}: {todo: todoProps}) => {
       <span className='text-center font-bold uppercase grow text-white'>{todo.title}</span>
       <div className='flex items-center mx-2'>
       {/* edit todo */}
-      <EditTodo/>
+      <EditTodo todo={todo}/>
       </div>
       <div className='flex items-center mx-2'>
       {/* delete todo */}

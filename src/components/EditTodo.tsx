@@ -2,8 +2,12 @@
 import React, { useState } from 'react'
 import Button from './Button';
 import { MdEdit } from 'react-icons/md';
+import Input from './Input';
+import Form from './Form';
+import { todo } from 'node:test';
+import { todoProps } from '@/types';
 
-const EditTodo = () => {
+const EditTodo = ({todo}: {todo: todoProps}) => {
     const [editTodo, setEditTodo] = useState(false);
 
     const handleEdit = () => {
@@ -12,6 +16,10 @@ const EditTodo = () => {
   return (
     <div className='flex gap-5 items-center'>
       <Button onClick={handleEdit} text={<MdEdit/>} actionButton />
+      {editTodo ? (<Form>
+        <Input name='inputId' value={todo.id} type='hidden'/>
+        <Button type='submit' text="Save"></Button>
+        </Form>) : null}
     </div>
   )
 }
