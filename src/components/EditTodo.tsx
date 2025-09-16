@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react'
 import Button from './Button';
+import { MdEdit } from 'react-icons/md';
 
 const EditTodo = () => {
     const [editTodo, setEditTodo] = useState(false);
@@ -10,7 +11,7 @@ const EditTodo = () => {
     }
   return (
     <div className='flex gap-5 items-center'>
-      <Button onClick={handleEdit}/>
+      <Button onClick={handleEdit} text={<MdEdit/>} actionButton />
     </div>
   )
 }

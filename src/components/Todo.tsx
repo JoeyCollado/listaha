@@ -1,6 +1,7 @@
 import React from 'react'
 import ChangeTodo from './ChangeTodo'
 import { todoProps } from '@/types'
+import EditTodo from './EditTodo'
 
 const Todo = ({todo}: {todo: todoProps}) => {
   return (
@@ -10,7 +11,7 @@ const Todo = ({todo}: {todo: todoProps}) => {
       <span className='text-center font-bold uppercase grow text-white'>{todo.title}</span>
       <div className='flex items-center mx-2'>
       {/* edit todo */}
-      
+      <EditTodo/>
       </div>
       <div className='flex items-center mx-2'>
       {/* delete todo */}
