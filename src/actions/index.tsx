@@ -41,3 +41,20 @@ await prisma.todo.update({ //update database
 
 revalidatePath("/");
 }
+
+export async function editTodo(formData: FormData){
+  const newTitle = formData.get('newTitle') as string; //get new title input
+  const inputId = formData.get("inputId") as string; //get inputId input
+
+  await prisma.todo.update({ //find it and update it
+    where: {
+      id: inputId,
+    },
+    data: {
+      title: newTitle
+    }
+  });
+
+  revalidatePath("/");
+
+}

@@ -20,7 +20,7 @@ const EditTodo = ({todo}: {todo: todoProps}) => {
         <Form>
           <Input name='inputId' value={todo.id} type='hidden'></Input>
         <div className='flex justify-center'>
-        <Input name='newTitle' placeholder='Edit Todo...'/>
+        <Input name='newTitle' type='text' placeholder='Edit Todo...'/>
         <Button type='submit' text="Save"></Button>
         </div>
         </Form>) : null}
