@@ -18,8 +18,9 @@ const EditTodo = ({todo}: {todo: todoProps}) => {
       <Button onClick={handleEdit} text={<MdEdit/>} actionButton />
       {editTodo ? (
         <Form>
+          <Input name='inputId' value={todo.id} type='hidden'></Input>
         <div className='flex justify-center'>
-        <Input name='inputId' value={todo.id} type='hidden'/>
+        <Input name='newTitle' placeholder='Edit Todo...'/>
         <Button type='submit' text="Save"></Button>
         </div>
         </Form>) : null}
