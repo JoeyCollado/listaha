@@ -6,6 +6,7 @@ import Input from './Input';
 import Form from './Form';
 import { todo } from 'node:test';
 import { todoProps } from '@/types';
+import * as actions from "@/actions"
 
 const EditTodo = ({todo}: {todo: todoProps}) => {
     const [editTodo, setEditTodo] = useState(false);
@@ -17,7 +18,7 @@ const EditTodo = ({todo}: {todo: todoProps}) => {
     <div className='flex gap-5 items-center'>
       <Button onClick={handleEdit} text={<MdEdit/>} actionButton />
       {editTodo ? (
-        <Form>
+        <Form action={actions.editTodo}>
           <Input name='inputId' value={todo.id} type='hidden'></Input>
         <div className='flex justify-center'>
         <Input name='newTitle' type='text' placeholder='Edit Todo...'/>
