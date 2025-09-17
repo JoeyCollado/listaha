@@ -16,9 +16,12 @@ const EditTodo = ({todo}: {todo: todoProps}) => {
   return (
     <div className='flex gap-5 items-center'>
       <Button onClick={handleEdit} text={<MdEdit/>} actionButton />
-      {editTodo ? (<Form>
+      {editTodo ? (
+        <Form>
+        <div className='flex justify-center'>
         <Input name='inputId' value={todo.id} type='hidden'/>
         <Button type='submit' text="Save"></Button>
+        </div>
         </Form>) : null}
     </div>
   )
