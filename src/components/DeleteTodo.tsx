@@ -4,10 +4,11 @@ import Form from "./Form";
 import Input from "./Input";
 import Button from "./Button";
 import { FaTrash } from "react-icons/fa";
+import * as actions from "@/actions";
 
 const DeleteTodo = ({ todo }: { todo: todoProps }) => {
   return (
-    <Form>
+    <Form action={actions.deleteTodo}>
       <Input type="hidden" name="inputId" value={todo.id}></Input>
       <Button
         actionButton
