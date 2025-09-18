@@ -41,7 +41,7 @@ await prisma.todo.update({ //update database
 
 revalidatePath("/");
 }
-
+//edit action
 export async function editTodo(formData: FormData){
   const newTitle = formData.get('newTitle') as string; //get new title input
   const inputId = formData.get("inputId") as string; //get inputId input
@@ -57,4 +57,16 @@ export async function editTodo(formData: FormData){
 
   revalidatePath("/");
 
+}
+
+//delete action
+export async function deleteTodo(formData: FormData){
+  const inputId = formData.get("inputId") as string;
+  await prisma.todo.delete({
+    where:{
+      id: inputId,
+    },
+  })
+
+  revalidatePath("/");
 }
