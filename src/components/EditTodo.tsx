@@ -12,6 +12,9 @@ const EditTodo = ({todo}: {todo: todoProps}) => {
     const [editTodo, setEditTodo] = useState(false);
 
     const handleEdit = () => {
+      if(todo.isCompleted){
+        return;
+      }
         setEditTodo(!editTodo); //when btn click set edit todo state to the opposite of current editTodo state, if its false turn true vice versa
     }
 
