@@ -2,6 +2,7 @@ import React from 'react'
 import ChangeTodo from './ChangeTodo'
 import { todoProps } from '@/types'
 import EditTodo from './EditTodo'
+import DeleteTodo from './DeleteTodo'
 
 const Todo = ({todo}: {todo: todoProps}) => {
   return (
@@ -15,7 +16,7 @@ const Todo = ({todo}: {todo: todoProps}) => {
       </div>
       <div className='flex items-center mx-2'>
       {/* delete todo */}
-      
+      <DeleteTodo todo={todo}/>
       </div>
       
     </div>
