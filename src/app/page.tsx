@@ -24,16 +24,16 @@ export default async function Home(){
 
   return (
     <div className='w-screen py-20 flex justify-center flex-col items-center text-white h-screen bg-black'>
-      <span className='text-4xl font-extrabold uppercase'>Listaha App</span>
+      <span className='text-5xl font-extrabold uppercase mt-[20%] mb-[5%] text-white'>Listaha</span>
       <h1 className='text-5xl font-extrabold uppercase mb-5 text-center'>
-        <span className='lowercase'>w</span>Server Actions
+        <span className='lowercase'></span>
       </h1>
 
-      <div className='flex justify-center flex-col items-center'>
+      <div className='flex justify-center flex-col items-center bg-black'>
         {/* add todo items*/} 
         <Todos/>
         {/* map todos */}
-        <div className='flex flex-col gap-5 items-center justify-center mt-10 w-screen'>
+        <div className='flex flex-col gap-5 items-center justify-center mt-10 w-screen mb-16'>
            {data.map((todo,id) => (
             <div className='w-full' key={id}>
             <Todo todo={todo}/>
