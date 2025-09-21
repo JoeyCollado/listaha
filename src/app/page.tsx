@@ -2,6 +2,7 @@ import Todos from '@/components/Todos'
 import React from 'react'
 import {prisma} from "@/utils/prisma" //grab data
 import Todo from '@/components/Todo';
+import { todoProps } from '@/types';
 
 async function getData(){ //function to fetch the grabbed data
   const data = await prisma.todo.findMany({
@@ -70,7 +71,7 @@ export default async function Home(){
                   <p className='text-gray-400 text-lg'>No tasks yet. Add one above to get started!</p>
                 </div>
               ) : (
-                data.map((todo, id) => (
+                data.map((todo: todoProps, id: number) => (
                   <div key={id} className={`animate-fade-in-up ${id < 5 ? `animate-delay-${(id + 1) * 100}` : ''}`}>
                     <Todo todo={todo}/>
                   </div>
