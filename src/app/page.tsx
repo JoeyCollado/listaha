@@ -23,22 +23,61 @@ export default async function Home(){
   const data = await getData(); //grab data using async function  
 
   return (
-    <div className='w-screen py-20 flex justify-center flex-col items-center text-white h-screen bg-black'>
-      <span className='text-5xl font-extrabold uppercase mt-[20%] mb-[5%] text-white'>Listaha</span>
-      <h1 className='text-5xl font-extrabold uppercase mb-5 text-center'>
-        <span className='lowercase'></span>
-      </h1>
+    <div className='min-h-screen w-full flex flex-col items-center text-white relative overflow-hidden'>
+      {/* Background gradient overlay */}
+      <div className='absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 opacity-90'></div>
+      
+      {/* Main content container */}
+      <div className='relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12'>
+        
+        {/* Header section */}
+        <div className='text-center mb-8 sm:mb-12 animate-fade-in-up'>
+          <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4'>
+            Listaha
+          </h1>
+          <p className='text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto'>
+            Organize your tasks with style. Add, edit, and manage your todos effortlessly.
+          </p>
+        </div>
 
-      <div className='flex justify-center flex-col items-center bg-black'>
-        {/* add todo items*/} 
-        <Todos/>
-        {/* map todos */}
-        <div className='flex flex-col gap-5 items-center justify-center mt-10 w-screen mb-16'>
-           {data.map((todo,id) => (
-            <div className='w-full' key={id}>
-            <Todo todo={todo}/>
+        {/* Add todo section */}
+        <div className='mb-8 sm:mb-12 animate-fade-in-up'>
+          <div className='bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/50 shadow-2xl'>
+            <h2 className='text-xl sm:text-2xl font-semibold text-white mb-6 text-center'>
+              Add New Task
+            </h2>
+            <Todos/>
+          </div>
+        </div>
+
+        {/* Todo list section */}
+        <div className='animate-fade-in-up'>
+          <div className='bg-gray-800/30 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-gray-700/30 shadow-xl'>
+            <div className='flex items-center justify-between mb-6'>
+              <h2 className='text-xl sm:text-2xl font-semibold text-white'>
+                Your Tasks
+              </h2>
+              <span className='text-sm text-gray-400 bg-gray-700/50 px-3 py-1 rounded-full'>
+                {data.length} {data.length === 1 ? 'task' : 'tasks'}
+              </span>
             </div>
-           ))}
+            
+            {/* Scrollable todo container */}
+            <div className='max-h-[60vh] sm:max-h-[50vh] overflow-y-auto pr-2 space-y-3'>
+              {data.length === 0 ? (
+                <div className='text-center py-12'>
+                  <div className='text-6xl mb-4'>📝</div>
+                  <p className='text-gray-400 text-lg'>No tasks yet. Add one above to get started!</p>
+                </div>
+              ) : (
+                data.map((todo, id) => (
+                  <div key={id} className={`animate-fade-in-up ${id < 5 ? `animate-delay-${(id + 1) * 100}` : ''}`}>
+                    <Todo todo={todo}/>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>

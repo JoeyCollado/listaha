@@ -12,8 +12,25 @@ export interface inputProps{
 
 const Input = ({name, type, placeholder, value}: inputProps) => { //props
   return (
-    <div>
-      <input name={name} type={type} placeholder={placeholder} value={value} className='bloc w-full p-4 mx-2 border rounded-lg text-base bg-gray-700 border-gray-600 placeholder:gray-400 text-white' title='input'/>
+    <div className='w-full'>
+      <input 
+        name={name} 
+        type={type} 
+        placeholder={placeholder} 
+        value={value} 
+        className='
+          block w-full p-3 sm:p-4 
+          bg-gray-800/80 backdrop-blur-sm 
+          border border-gray-600/50 rounded-xl 
+          text-base text-white placeholder-gray-400
+          focus:outline-none focus:ring-2 focus:ring-blue-500/50 
+          focus:border-blue-500/50 focus:bg-gray-800/90
+          transition-all duration-200 ease-in-out
+          hover:border-gray-500/70 hover:bg-gray-800/90
+          shadow-lg
+        ' 
+        title='input'
+      />
     </div>
   )
 }

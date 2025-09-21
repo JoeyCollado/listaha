@@ -23,15 +23,26 @@ const EditTodo = ({todo}: {todo: todoProps}) => {
     }
     
   return (
-    <div className='flex gap-5 items-center'>
-      <Button onClick={handleEdit} text={<MdEdit/>} actionButton />
+    <div className='flex flex-col sm:flex-row gap-2 sm:gap-3 items-center'>
+      <Button 
+        onClick={handleEdit} 
+        text={<MdEdit className="text-sm"/>} 
+        actionButton 
+        bgColor="bg-blue-500 hover:bg-blue-600"
+      />
       {editTodo ? (
         <Form action={actions.editTodo} onSubmit={handleSubmit}>
           <Input name='inputId' value={todo.id} type='hidden'></Input>
-        <div className='flex justify-center'>
-        <Input name='newTitle' type='text' placeholder='Edit Todo...'/>
-        <Button type='submit' text="Save"></Button>
-        </div>
+          <div className='flex flex-col sm:flex-row gap-2 sm:gap-3 items-center'>
+            <div className='flex-1 min-w-0'>
+              <Input name='newTitle' type='text' placeholder='Edit task...'/>
+            </div>
+            <Button 
+              type='submit' 
+              text="Save" 
+              bgColor="bg-green-500 hover:bg-green-600"
+            />
+          </div>
         </Form>) : null}
     </div>
   )

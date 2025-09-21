@@ -10,11 +10,19 @@ import * as actions from "@/actions";
 
 const AddTodo = () => {
   return (
-    <div>
+    <div className="w-full">
       <Form action={actions.createTodo}>
-        <div className="flex gap-4 items-center">
-          <Input name="input" type="text" placeholder="Add Todo Here..." />
-          <Button type="submit" text="Add" bgColor="bg-blue-600" />
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center">
+          <div className="flex-1">
+            <Input name="input" type="text" placeholder="What needs to be done?" />
+          </div>
+          <div className="flex-shrink-0">
+            <Button 
+              type="submit" 
+              text="Add Task" 
+              bgColor="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+            />
+          </div>
         </div>
       </Form>
     </div>
